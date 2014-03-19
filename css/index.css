@@ -1,0 +1,125 @@
+#overlay{
+	position: absolute;
+	z-level: 999;
+	height: 100%;
+	width: 100%;
+	background-color: rgba(0,0,0,1);
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+}
+
+#videoSource{
+	width: 40%;
+	height: 10%;
+}
+
+#srcLabel{
+	color: white;
+	display: block;
+}
+
+#vsrc, #loadVideo{
+	width: 100%;
+}
+
+#content{
+	positon: absolute;
+	z-level: 900;
+}
+
+#left{
+	background-color: grey;
+    height: 100%;
+    width: 70%;
+	float: left;
+}
+
+#header{
+	display: none;
+	width: 100%;
+	height: 2%;
+	background-color: grey;
+	text-align: center;
+	color: white;
+}
+
+#playerContainer{
+	position: relative;
+	display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+	margin-top: 5%;
+}
+
+#player{
+	display: none;
+}
+
+#syncForm{
+	display: none;
+}
+
+#right{
+	display: inline-block;
+    height: 100%;
+    width: 30%;
+}
+
+video{
+    background-color: black;
+    width: 100%;
+    height: 27%
+}
+
+#callForm{
+	height: 3%;
+	margin: 0;
+}
+
+#callForm #callButton{
+	width: 100%;
+}
+
+#chat{
+    background-color: yellow;
+    height: 70%
+}
+
+#chat #messages{
+	background-color: lightgrey;
+	height: 80%;
+	overflow-y: scroll;
+}
+
+#chat #messages .bubble{
+	background-color: rgba(0,0,0,0.2);
+	height: 5%;
+	padding: 5%;
+	border: 1px rgba(0,0,0,0.2) solid;
+	border-radius: 10px;
+	margin-top: 1%;
+	margin-bottom: 1%;
+}
+
+#chat #messages .incoming{
+	text-align: left;
+}
+
+#chat #messages .outgoing{
+	text-align: right;
+}
+
+#chat #chatForm #userInput{
+	height: 15%;
+	width: 100%;
+}
+
+#chat #chatForm #send{
+	height: 5%;
+	width: 100%;
+}

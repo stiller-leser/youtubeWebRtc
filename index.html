@@ -1,0 +1,71 @@
+<DOCTYPE !HTML>
+<html>
+    <head>
+		<script type="text/javascript" src="js/jquery.min.js"></script>
+        <script type="text/javascript" src="js/peer.min.js"></script>
+        <link rel="stylesheet" href="css/reset.css">
+        <link rel="stylesheet" href="css/index.css">
+    </head>
+    <body>
+		<div id="overlay">
+			<form id="videoSource">
+				<label for"vsrc" id="srcLabel">Gebe die URL des YouTube-Videos ein</label>
+				<input type="text" id="vsrc">
+				<button id="loadVideo">Video starten</button>
+			</form>
+		</div>
+		<div id="content">
+			<div id="left">
+				<div id="header"></div>
+				<div id="playerContainer">
+					<div id="player"></div>
+					<script>
+							var tag = document.createElement('script');
+
+							tag.src = "https://www.youtube.com/iframe_api";
+							var firstScriptTag = document.getElementsByTagName('script')[0];
+							firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);		
+
+							var player;
+							function onYouTubeIframeAPIReady() {
+								player = new YT.Player('player', {
+									height: '390',
+									width: '640',
+									videoId: '',
+									events: {
+										'onReady': onPlayerReady,
+										'onStateChange': onPlayerStateChange
+									}
+								});
+							}
+					</script>
+					<form id="syncForm">
+						<label id="syncVideoLabel" for="syncVideo">Sync Video</label>
+						<button id="syncVideo">Sync Video</button>
+						<label id="syncTimeLabel" for="syncTime">Sync Time</label>
+						<button id="syncTime">Sync Time</button>
+					</form>
+				</div>
+			</div>
+			<div id="right">
+				<video id="partner"></video>
+				<form id="callForm">
+					<button id="callButton">Call</button>
+				</form>
+				<div id="chat">
+					<div id="messages">
+					</div>
+					<form id="chatForm">
+						<textarea id="userInput"></textarea>
+						<button id="send">Send Message</button>
+					</form>
+				</div>
+			</div>
+		</div>
+    </body>
+	<script type="text/javascript" src="js/helper.js"></script>
+	<script type="text/javascript" src="js/chat.js"></script>
+	<script type="text/javascript" src="js/index.js"></script>
+	<script type="text/javascript" src="js/player.js"></script>
+	<script type="text/javascript" src="js/ui.js"></script>	
+</html>
