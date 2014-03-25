@@ -9,10 +9,11 @@ function Chat(){
 	var hasGetUserMedia = false;
 	
 	if(getURLParameter("id") === null){ //User will be caller
-		chat.peer = new Peer({key: 'xoxb2qrmo5xt7qfr'});
+		chat.peer = new Peer({key: ''});
 
 		chat.peer.on('open', function(id) {
-			$("#header").html("Send this link to your friends<br/>127.0.0.1/webRTC/" + addUrlParam(document.location.search, "id", id));
+			var link = addUrlParam(document.location.search, "id", id);
+			$("#header").html("Send this link to your friends<br/><a href='"+link+"' target='_blank'>"+link+"</a>");
 			chat.userId = id;
 		});
 		
@@ -27,13 +28,43 @@ function Chat(){
 		});
 		
 		chat.peer.on('call', function(call){
-			console.log("caller got called");
-			call.answer(chat.getMediaStream());
-			call.on('stream', function(stream){
-				console.log("caller receives stream");
-				var video = window.document.getElementById("partner");
-				video.src = stream;
-				video.play();
+			console.log("caller is answering call");
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+	
+			navigator.getUserMedia({
+				video: true
+			},function(stream){
+				var localStream = null;
+				if(navigator.mozGetUserMedia){
+					localStream = localMediaStream;
+				}else{
+					var vendorURL = window.URL || window.webkitURL;
+					localStream = vendorURL.createObjectURL(localMediaStream);
+				}
+				call.answer(localStream);
+				call.on('stream', function(remoteStream){
+					console.log("caller is receiving stream");
+					console.log("callers remote stream");
+					console.log(remoteStream);
+					var v = document.getElementById("partner");
+					console.log(v);
+					v.src = URL.createObjectURL(remoteStream);
+					v.play();
+				});
+			},
+			function(err){	
+				console.log("caller error next line");
+				console.log(err);
+				call.answer();
+				call.on('stream', function(remoteStream){
+					console.log("caller is receiving stream");
+					console.log("callers remote stream");
+					console.log(remoteStream);
+					var v = document.getElementById("partner");
+					console.log(v);
+					v.src = URL.createObjectURL(remoteStream);
+					v.play();
+				});
 			});
 		});
 		
@@ -42,20 +73,54 @@ function Chat(){
 		$("#player").show();
 		$("#syncForm").show();
 		
-		chat.peer = new Peer({key: 'xoxb2qrmo5xt7qfr'});
+		chat.peer = new Peer({key: ''});
 		chat.conn = chat.peer.connect(getURLParameter('id'));
 		chat.peer.on('open', function(id){
 			chat.userId = id;
 		});
 		
 		chat.peer.on('call', function(call){
-			console.log("callee got called");
-			call.answer(chat.getMediaStream());
-			call.on('stream', function(stream){
-				console.log("callee is receiving stream");
-				var video = window.document.getElementById("partner");
-				video.src = stream;
-				video.play();
+			console.log("callee is answering call");
+			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+	
+			navigator.getUserMedia({
+				video: true
+			},function(stream){
+				var localStream = null;
+				if(navigator.mozGetUserMedia){
+					localStream = localMediaStream;
+				}else{
+					var vendorURL = window.URL || window.webkitURL;
+					localStream = vendorURL.createObjectURL(stream);
+				}
+				call.answer(localStream);
+				var v = document.getElementById("partner");
+					console.log(v);
+					v.src = localStream;
+					v.play();
+				call.on('stream', function(remoteStream){
+					console.log("callee is receiving stream");
+					console.log("callees remote stream");
+					console.log(remoteStream);
+					var v = document.getElementById("partner");
+					console.log(v);
+					v.src = URL.createObjectURL(remoteStream);
+					v.play();
+				});
+			},
+			function(err){
+				console.log("callee error next line");
+				console.log(err);	
+				call.answer();
+				call.on('stream', function(remoteStream){
+					console.log("callee is receiving stream");
+					console.log("callees remote stream");
+					console.log(remoteStream);
+					var v = document.getElementById("partner");
+					console.log(v);
+					v.src = URL.createObjectURL(remoteStream);
+					v.play();
+				});
 			});
 		});
 		
@@ -67,32 +132,23 @@ function Chat(){
 	}
 }
 
-Chat.prototype.getMediaStream = function(){
-	var navigator = window.navigator;
-	navigator.getMedia = ( navigator.getUserMedia ||
-                         navigator.webkitGetUserMedia ||
-                         navigator.mozGetUserMedia ||
-                         navigator.msGetUserMedia);
-	navigator.getMedia({
-		video: true
-	}, function(localMediaStream){
-		if(navigator.mozGetUserMedia){
-			return localMediaStream;
-		}else{
-			var vendorURL = window.URL || window.webkitURL;
-			return vendorURL.createObjectURL(localMediaStream);
-		}
-	});
-};
-
 Chat.prototype.call = function(){
 	var target = chat.callees[0];
-	console.log(target);
-	var call = chat.peer.call(chat.callees[0], chat.getMediaStream());
-};
-
-Chat.prototype.answerCall = function(){
 	
+	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+	
+	navigator.getUserMedia({
+		video: true
+	},function(stream){
+		console.log("called");
+		var call = chat.peer.call(target, stream);
+		call.on('stream', function(remoteStream){
+			var v = document.getElementById("partner");
+			console.log(v);
+			v.src = remoteStream;
+			v.play();
+		});
+	});
 };
 
 Chat.prototype.sendMessage = function(){

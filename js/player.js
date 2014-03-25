@@ -3,6 +3,7 @@ var playerConf = {
 };
 
 function onPlayerReady(){
+	
 }
 
 function onPlayerStateChange(){
