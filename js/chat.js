@@ -3,13 +3,14 @@ function Chat(){
 	var chat = this;
 	var conn;
 	var connected = false;
+	chat.call = 0;
 	chat.callees = [];
 	chat.peer = 0;
 	var userId;
 	var hasGetUserMedia = false;
 	
 	if(getURLParameter("id") === null){ //User will be caller
-		chat.peer = new Peer({key: ''});
+		chat.peer = new Peer({key: 'xoxb2qrmo5xt7qfr'});
 
 		chat.peer.on('open', function(id) {
 			var link = addUrlParam(document.location.search, "id", id);
@@ -19,12 +20,31 @@ function Chat(){
 		
 		chat.peer.on('connection', function(conn) {
 			chat.conn = conn;
-			chat.connected = true;
-			
-			// Receive messages
-			chat.conn.on('data', function(data) {
-				chat.handleMessage(data);
-			});
+			console.log(chat.callees.length);
+			if(chat.callees.length < 1){//no caller
+				
+				setTimeout(function(){
+					$("#rightOverlay").hide();
+					var string = "";
+					string = "<p class='bubble outcoming'>Your partner joined the room</p>";
+					$("#messages").append(string);
+					$("#messages").animate({scrollTop: $("#messages").prop("scrollHeight")},500);
+				}, 1500);
+
+				setTimeout(function(){
+					chat.sendSyncVideo(playerConf.videoId);
+					chat.sendSyncUserId(chat.userId);
+				}, 1000);
+
+				// Receive messages
+				chat.conn.on('data', function(data) {
+					chat.handleMessage(data);
+				});
+			} else { //more than one caller
+				setTimeout(function(){
+					chat.sendRoomFull(true);
+				}, 1000);
+			}
 		});
 		
 		chat.peer.on('call', function(call){
@@ -70,17 +90,21 @@ function Chat(){
 		
 	} else { //User will be callee
 		$("#overlay").hide();
-		$("#player").show();
+		$("#player").css("margin-left","0");
 		$("#syncForm").show();
+		$("#rightOverlay").hide();
 		
-		chat.peer = new Peer({key: ''});
+		chat.peer = new Peer({key: 'xoxb2qrmo5xt7qfr'});
 		chat.conn = chat.peer.connect(getURLParameter('id'));
 		chat.peer.on('open', function(id){
 			chat.userId = id;
 		});
 		
 		chat.peer.on('call', function(call){
+			chat.call = call;
 			console.log("callee is answering call");
+			$("#callButton").hide();
+			$("#callEndButton").show();
 			navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 	
 			navigator.getUserMedia({
@@ -93,12 +117,12 @@ function Chat(){
 					var vendorURL = window.URL || window.webkitURL;
 					localStream = vendorURL.createObjectURL(stream);
 				}
-				call.answer(localStream);
+				chat.call.answer(localStream);
 				var v = document.getElementById("partner");
 					console.log(v);
 					v.src = localStream;
 					v.play();
-				call.on('stream', function(remoteStream){
+				chat.call.on('stream', function(remoteStream){
 					console.log("callee is receiving stream");
 					console.log("callees remote stream");
 					console.log(remoteStream);
@@ -125,31 +149,22 @@ function Chat(){
 		});
 		
 		chat.conn.on('open', function(id){
+			setTimeout(function(){
+				chat.sendSyncUserId(chat.userId);
+				setTimeout(function(){
+					var string = "";
+					string = "<p class='bubble outcoming'>You are now connected</p>";
+					$("#messages").append(string);
+					$("#messages").animate({scrollTop: $("#messages").prop("scrollHeight")},500);
+				}, 500);
+			}, 1000);
+			
 			chat.conn.on('data', function(data){
 				chat.handleMessage(data);
 			});
 		});	
 	}
 }
-
-Chat.prototype.call = function(){
-	var target = chat.callees[0];
-	
-	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
-	
-	navigator.getUserMedia({
-		video: true
-	},function(stream){
-		console.log("called");
-		var call = chat.peer.call(target, stream);
-		call.on('stream', function(remoteStream){
-			var v = document.getElementById("partner");
-			console.log(v);
-			v.src = remoteStream;
-			v.play();
-		});
-	});
-};
 
 Chat.prototype.sendMessage = function(){
 	var message = $("#userInput").val();
@@ -158,8 +173,7 @@ Chat.prototype.sendMessage = function(){
 	string = "<p class='bubble outgoing'>"+message+"</p>";
 	$("#messages").append(string);
 	$("#messages").animate({scrollTop: $("#messages").prop("scrollHeight")},500);
-	chat.conn.send({userId: chat.userId,
-					user:message});
+	chat.conn.send({user:message});
 };
 
 Chat.prototype.sendState = function(message){
@@ -174,6 +188,23 @@ Chat.prototype.sendTime = function(message){
 	chat.conn.send({time:message});
 };
 
+Chat.prototype.sendSyncVideo = function(message){
+	chat.sendVideoId({videoId:message});	
+};
+
+Chat.prototype.sendSyncUserId = function(message){
+	chat.conn.send({userId:message});
+};
+
+Chat.prototype.sendRoomFull = function(message){
+	chat.conn.send({roomFull:message});
+};
+
+Chat.prototype.sendCallClosed = function(message){
+	console.log(message);
+	chat.conn.send({callClosed:message});
+};
+
 Chat.prototype.handleMessage = function(data){
 	console.log(data);
 	if(data.user){//message from user
@@ -181,9 +212,8 @@ Chat.prototype.handleMessage = function(data){
 		string = "<p class='bubble incoming'>"+data.user+"</p>";
 		$("#messages").append(string);
 		$("#messages").animate({scrollTop: $("#messages").prop("scrollHeight")},500);
-		if(chat.callees.indexOf(data.userId) === -1){
-			chat.callees.push(data.userId);	
-		}
+	}else if(data.userId){
+		chat.callees.push(data.userId);
 	}else if(data.videoId){
 		console.log(data.videoId);
 		loadVideo(data.videoId);
@@ -193,5 +223,37 @@ Chat.prototype.handleMessage = function(data){
 	}else if(data.time){
 		console.log(data.time);
 		player.seekTo(data.time);	
+	}else if(data.roomFull){
+		alert("Der Raum ist voll");
+		chat.peer.destroy();
+	}else if(data.callClosed){
+		$("#callEndButton").hide();
+		$("#callButton").show();
 	}
+};
+
+Chat.prototype.startCall = function(){
+	var target = chat.callees[0];
+	
+	navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+	
+	navigator.getUserMedia({
+		video: true
+	},function(stream){
+		console.log("called");
+		chat.call = chat.peer.call(target, stream);
+		chat.call.on('stream', function(remoteStream){
+			var v = document.getElementById("partner");
+			console.log(v);
+			v.src = remoteStream;
+			v.play();
+		});
+	});
+};
+
+Chat.prototype.endCall = function(){
+	$("#callEndButton").hide();
+	$("#callButton").show();
+	chat.call.close();
+	chat.sendCallClosed(true);
 };

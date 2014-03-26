@@ -3,7 +3,7 @@ var playerConf = {
 };
 
 function onPlayerReady(){
-	
+	$("#videoSource").show();
 }
 
 function onPlayerStateChange(){

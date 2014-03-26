@@ -3,13 +3,13 @@
     <head>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/peer.min.js"></script>
+		<script type="text/javascript" src="js/player.js"></script>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/index.css">
     </head>
     <body>
 		<div id="overlay">
 			<form id="videoSource">
-				
 				<label for"vsrc" id="srcLabel">Gebe die URL des YouTube-Videos ein</label>
 				<input type="text" id="vsrc" value="https://www.youtube.com/watch?v=WKCl3lfAx1Q">
 				<button id="loadVideo">Video starten</button>
@@ -33,6 +33,11 @@
 									height: '390',
 									width: '640',
 									videoId: '',
+									playerVars: {
+										autohide: 1, //hides the controls after the video started playing
+										modestbranding: 1, //Removes the youtube-logo from player
+										iv_load_policy: 3 //prevents popups
+									},
 									events: {
 										'onReady': onPlayerReady,
 										'onStateChange': onPlayerStateChange
@@ -49,16 +54,18 @@
 				</div>
 			</div>
 			<div id="right">
+				<div id="rightOverlay">Nobody is here yet, you are all alone</div>
 				<video id="partner"></video>
 				<form id="callForm">
-					<button id="callButton">Call</button>
+					<button id="callButton" class="button">Call</button>
+					<button id="callEndButton" class="button">End Call</button>
 				</form>
 				<div id="chat">
 					<div id="messages">
 					</div>
 					<form id="chatForm">
 						<textarea id="userInput"></textarea>
-						<button id="send">Send Message</button>
+						<button id="send" class="button">Send Message</button>
 					</form>
 				</div>
 			</div>
@@ -67,6 +74,5 @@
 	<script type="text/javascript" src="js/helper.js"></script>
 	<script type="text/javascript" src="js/chat.js"></script>
 	<script type="text/javascript" src="js/index.js"></script>
-	<script type="text/javascript" src="js/player.js"></script>
 	<script type="text/javascript" src="js/ui.js"></script>	
 </html>
