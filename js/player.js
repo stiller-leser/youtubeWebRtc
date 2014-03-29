@@ -7,7 +7,7 @@ function onPlayerReady(){
 }
 
 function onPlayerStateChange(){
-	chat.sendState(player.getPlayerState());
+	//chat.sendState(player.getPlayerState());
 }
 
 var getVideoId = function(url){

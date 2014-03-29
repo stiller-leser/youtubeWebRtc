@@ -248,6 +248,8 @@ Chat.prototype.startCall = function(){
 			v.src = remoteStream;
 			v.play();
 		});
+	},function(error){
+		console.log(error);	
 	});
 };
 
