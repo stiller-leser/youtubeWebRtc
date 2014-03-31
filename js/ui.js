@@ -12,25 +12,25 @@ $("#loadVideo").bind('click', function(e){
 
 $("#syncVideo").bind('click',function(e){
 	e.preventDefault();
-	chat.sendVideoId(playerConf.videoId);
+	role.sendVideoId(playerConf.videoId);
 });
 
 $("#syncTime").bind('click',function(e){
 	e.preventDefault();
-	chat.sendTime(player.getCurrentTime());
+	role.sendTime(player.getCurrentTime());
 });
 
 $("#userInput").bind('keyup', function(e){
 	e.preventDefault();
 	if(e.keyCode === 13){
 		e.preventDefault();
-		chat.sendMessage();
+		role.sendMessage();
 	}
 });
 
 $("#send").bind('click', function(e){
 	e.preventDefault();
-	chat.sendMessage();
+	role.sendMessage();
 });
 
 if(util.supports.audioVideo){
@@ -38,13 +38,13 @@ if(util.supports.audioVideo){
 		e.preventDefault();
 		$("#callButton").hide();
 		$("#callEndButton").show();
-		chat.startCall();
+		role.startCall();
 	});
 	$("#callEndButton").bind('click', function(e){
 		e.preventDefault();
 		$("#callEndButton").hide();
 		$("#callButton").show();
-		chat.endCall();
+		role.endCall();
 	});
 } else {
 	$("#callButton").attr("diabled","disabled");
