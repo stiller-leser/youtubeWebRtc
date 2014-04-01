@@ -100,7 +100,6 @@ body{
 	border: 0;
 	border-top: 0.2em ridge darkgrey;
 	border-bottom: 0.2em ridge darkgrey;
-	width: 100%;
 }
 
 #callForm{
@@ -108,8 +107,26 @@ body{
 	margin: 0;
 }
 
+#callButton{
+	width: 100%;
+}
+
 #callEndButton{
+	width: 33%;
 	display: none;
+	float: left;
+}
+
+#activateMicrophoneButton, #deactivateMicrophoneButton{
+	width: 33%;
+	display: none;
+	float: left;
+}
+
+#muteCallerButton, #unmuteCallerButton{
+	width: 33%;
+	display: none;
+	float: left;
 }
 
 #chat{
@@ -119,10 +136,12 @@ body{
 
 #chat #messages{
 	background-color: black;
-	height: 79.6%;
+	height: 73%;
 	border-bottom: 0.2em ridge darkgrey;
 	overflow-y: scroll;
+    word-break: break-all;
 	padding: 2%;
+    padding-bottom: 10%;
 }
 
 #chat #messages .bubble{
@@ -157,4 +176,15 @@ body{
 
 #chat #chatForm #send{
 	height: 3.8%;
+	width: 100%;
+}
+
+#PartnerIsTyping{
+    position: absolute;
+    bottom: 13%;
+    width: 27%;
+    text-align: right;
+    color: red;
+    font-size: 400%;
+    display: none;
 }

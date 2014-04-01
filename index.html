@@ -3,7 +3,6 @@
     <head>
 		<script type="text/javascript" src="js/jquery.min.js"></script>
         <script type="text/javascript" src="js/peer.min.js"></script>
-		<script type="text/javascript" src="js/player.js"></script>
         <link rel="stylesheet" href="css/reset.css">
         <link rel="stylesheet" href="css/index.css">
     </head>
@@ -21,10 +20,10 @@
 				<div id="playerContainer">
 					<div id="player"></div>
 					<script>
-							var tag = document.createElement('script');
+						    var tag = document.createElement('script');
 
-							tag.src = "https://www.youtube.com/iframe_api";
-							var firstScriptTag = document.getElementsByTagName('script')[0];
+						    tag.src = "https://www.youtube.com/iframe_api";
+						    var firstScriptTag = document.getElementsByTagName('script')[0];
 							firstScriptTag.parentNode.insertBefore(tag, firstScriptTag);		
 
 							var player;
@@ -58,10 +57,15 @@
 				<video id="partner"></video>
 				<form id="callForm">
 					<button id="callButton" class="button">Call</button>
+					<button id="activateMicrophoneButton" class="button">Activate Microphone</button>
+					<button id="deactivateMicrophoneButton" class="button">Deactivate Microphone</button>
+					<button id="muteCallerButton" class="button">Mute</button>
+					<button id="unmuteCallerButton" class="button">Unmute</button>
 					<button id="callEndButton" class="button">End Call</button>
 				</form>
 				<div id="chat">
 					<div id="messages">
+						<div id="partnerIsTyping">...</div>
 					</div>
 					<form id="chatForm">
 						<textarea id="userInput"></textarea>
@@ -72,6 +76,8 @@
 		</div>
     </body>
 	<script type="text/javascript" src="js/helper.js"></script>
+	<script type="text/javascript" src="js/earlyUiHelpers.js"></script>
+	<script type="text/javascript" src="js/player.js"></script>
 	<script type="text/javascript" src="js/roles/participant.js"></script>
 	<script type="text/javascript" src="js/roles/caller.js"></script>
 	<script type="text/javascript" src="js/roles/callee.js"></script>

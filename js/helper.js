@@ -4,7 +4,7 @@
 * @param {key}    string  the key to set
 * @param {val}    string  value 
 */
-var addUrlParam = function(search, key, val){
+var addUrlParam = function(search, key, val) {
   var newParam = key + '=' + val,
       params = '?' + newParam;
 
@@ -23,12 +23,12 @@ var addUrlParam = function(search, key, val){
 };
 
 var getURLParameter = function(name) {
-  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search)||[,""])[1].replace(/\+/g, '%20'))||null;
+  return decodeURIComponent((new RegExp('[?|&]' + name + '=' + '([^&;]+?)(&|#|;|$)').exec(location.search) || [, ''])[1].replace(/\+/g , '%20')) || null;
 };
 
 var hasGetUserMedia = function() {
-  // Note: Opera builds are unprefixed.
-	var navigator = window.navigator;
- 	return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
+    // Note: Opera builds are unprefixed.
+    var navigator = window.navigator;
+    return !!(navigator.getUserMedia || navigator.webkitGetUserMedia ||
             navigator.mozGetUserMedia || navigator.msGetUserMedia);
 };
