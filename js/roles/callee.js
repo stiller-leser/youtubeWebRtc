@@ -23,7 +23,7 @@ function Callee() {
                 $('#messages').append(string);
                 $('#messages').animate({scrollTop: $('#messages').prop('scrollHeight')},500);
             }, 500);
-        }, 1000);
+        }, 3000);
 
         callee.conn.on('data', function(data) {
             callee.handleMessage(data);

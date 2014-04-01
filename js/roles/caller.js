@@ -27,7 +27,7 @@ function Caller() {
             setTimeout(function() {
                 caller.sendSyncVideo(playerConf.videoId);
                 caller.sendSyncUserId(caller.userId);
-            }, 1000);
+            }, 3000);
 
             // Receive messages
             caller.conn.on('data', function(data) {
