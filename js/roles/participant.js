@@ -65,6 +65,7 @@ Participant.prototype.handleMessage = function(data) {
         console.log(this.callees);
     }else if (data.videoId) {
         console.log(data.videoId);
+        playerConf.videoId = data.videoId;
         loadVideo(data.videoId);
     }else if (data.state) {
         //player
