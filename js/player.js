@@ -1,5 +1,6 @@
 var playerConf = {
-    videoId: ''
+    videoId: '',
+    changed: false
 };
 
 function onPlayerReady() {
@@ -38,18 +39,27 @@ var pause = function() {
 };
 
 var handleState = function(state) {
-    switch (state) {
-        case -1: //player is not yet started
-            stop();
-        break;
-        case 0: //video ended
-            stop();
-        break;
-        case 1: //video is playing
-            play();
-        break;
-        case 2: //video is paused
-            pause();
-        break;
+    if (playerConf.changed === false) {
+        switch (state) {
+            case -1: //player is not yet started
+                stop();
+                role.sendTime(player.getCurrentTime());                
+            break;
+            case 0: //video ended
+                stop();
+                role.sendTime(player.getCurrentTime());                
+            break;
+            case 1: //video is playing
+                play();
+            break;
+            case 2: //video is paused
+                pause();
+                role.sendTime(player.getCurrentTime());
+            break;
+        }
+        playerConf.changed = true;
+        setTimeout(function() {
+            playerConf.changed = false;
+        }, 1000);
     }
 };

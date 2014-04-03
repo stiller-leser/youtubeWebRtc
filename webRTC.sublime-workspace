@@ -1,0 +1,872 @@
+{
+	"auto_complete":
+	{
+		"selected_items":
+		[
+			[
+				"get",
+				"get	Get Elements"
+			],
+			[
+				"pa",
+				"padding-bottom"
+			],
+			[
+				"lo",
+				"localStream"
+			],
+			[
+				"muteC",
+				"muteCallerButton"
+			],
+			[
+				"web",
+				"webkitIsFullScreen"
+			],
+			[
+				"unmuteCaller",
+				"unmuteCallerButton"
+			],
+			[
+				"prot",
+				"prototype"
+			],
+			[
+				"en",
+				"enabled"
+			],
+			[
+				"pro",
+				"prototype"
+			],
+			[
+				"col",
+				"colgroup	Tag"
+			],
+			[
+				"back",
+				"background-color"
+			],
+			[
+				"array_p",
+				"array_push"
+			],
+			[
+				"best",
+				"bestOfThree"
+			],
+			[
+				"gene",
+				"generateLevenshteinArray"
+			],
+			[
+				"handle",
+				"handleInput"
+			],
+			[
+				"print",
+				"print"
+			],
+			[
+				"handl",
+				"handleInput"
+			],
+			[
+				"inputFi",
+				"inputFileName"
+			],
+			[
+				"input",
+				"inputFileName"
+			],
+			[
+				"last",
+				"lastWordWithoutPunctuation"
+			],
+			[
+				"tt-input-te",
+				"tt-input-text"
+			],
+			[
+				"tt-in",
+				"tt-input-text"
+			],
+			[
+				"ca",
+				"catOutput"
+			],
+			[
+				"sc",
+				"scannerExecuted"
+			],
+			[
+				"Pok",
+				"PokedexList"
+			],
+			[
+				"background",
+				"background-position"
+			],
+			[
+				"re",
+				"requestData"
+			],
+			[
+				"html",
+				"htmlspecialchars"
+			],
+			[
+				"pos",
+				"postleitzahl"
+			],
+			[
+				"reise",
+				"reisezielnr"
+			],
+			[
+				"preis",
+				"preis"
+			]
+		]
+	},
+	"buffers":
+	[
+		{
+			"file": "js/chat.js",
+			"settings":
+			{
+				"buffer_size": 268,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/helper.js",
+			"settings":
+			{
+				"buffer_size": 1142,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "/home/cyrix/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+			"settings":
+			{
+				"buffer_size": 0,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "js/roles/caller.js",
+			"settings":
+			{
+				"buffer_size": 2030,
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "webRTC.sublime-project",
+			"settings":
+			{
+				"buffer_size": 176,
+				"line_ending": "Unix"
+			}
+		}
+	],
+	"build_system": "",
+	"command_palette":
+	{
+		"height": 392.0,
+		"selected_items":
+		[
+			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"rem",
+				"Package Control: Remove Package"
+			],
+			[
+				"install",
+				"Package Control: Install Package"
+			],
+			[
+				"remoc",
+				"Package Control: Remove Package"
+			],
+			[
+				"insta",
+				"Package Control: Install Package"
+			],
+			[
+				"in",
+				"Package Control: Install Package"
+			],
+			[
+				"instal",
+				"Package Control: Install Package"
+			],
+			[
+				"inst",
+				"Package Control: Install Package"
+			],
+			[
+				"remo",
+				"Package Control: Remove Package"
+			],
+			[
+				"Insta",
+				"Package Control: Install Package"
+			],
+			[
+				"Package Control: ",
+				"Package Control: Discover Packages"
+			]
+		],
+		"width": 467.0
+	},
+	"console":
+	{
+		"height": 153.0,
+		"history":
+		[
+			"TernJS: Reload",
+			"ternJS:reload",
+			"import urllib.request,os,hashlib; h = '7183a2d3e96f11eeadd761d777e62404' + 'e330c659d4bb41d3bdf022e94cab3cd0'; pf = 'Package Control.sublime-package'; ipp = sublime.installed_packages_path(); urllib.request.install_opener( urllib.request.build_opener( urllib.request.ProxyHandler()) ); by = urllib.request.urlopen( 'http://sublime.wbond.net/' + pf.replace(' ', '%20')).read(); dh = hashlib.sha256(by).hexdigest(); print('Error validating download (got %s instead of %s), please try manual install' % (dh, h)) if dh != h else open(os.path.join( ipp, pf), 'wb' ).write(by) "
+		]
+	},
+	"distraction_free":
+	{
+		"menu_visible": true,
+		"show_minimap": false,
+		"show_open_files": false,
+		"show_tabs": false,
+		"side_bar_visible": false,
+		"status_bar_visible": false
+	},
+	"file_history":
+	[
+		"/home/cyrix/.config/sublime-text-3/Packages/Default/Default (Linux).sublime-keymap",
+		"/home/cyrix/workspace/webRTC/js/test.js",
+		"/home/cyrix/.config/sublime-text-3/Packages/User/TernJS.sublime-settings",
+		"/home/cyrix/workspace/webRTC/webRTC.sublime-project",
+		"/home/cyrix/.config/sublime-text-3/Packages/TernJS/TernJS.sublime-settings",
+		"/home/cyrix/.config/sublime-text-3/Packages/Default/Preferences.sublime-settings",
+		"/home/cyrix/.config/sublime-text-3/Packages/User/Preferences.sublime-settings",
+		"/home/cyrix/workspace/webRTC/js/earlyUiHelpers.js",
+		"/home/cyrix/workspace/webRTC/js/roles/callee.js",
+		"/home/cyrix/workspace/webRTC/js/helper.js",
+		"/home/cyrix/workspace/webRTC/js/roles/caller.js",
+		"/home/cyrix/workspace/webRTC/css/index.css",
+		"/home/cyrix/workspace/webRTC/index.html",
+		"/home/cyrix/workspace/webRTC/js/ui.js",
+		"/home/cyrix/workspace/webRTC/js/chat.js",
+		"/home/cyrix/.config/sublime-text-3/Packages/SublimeLinter/SublimeLinter.sublime-settings",
+		"/home/cyrix/.config/sublime-text-3/Packages/User/SublimeLinter.sublime-settings",
+		"/media/cyrix/Seagate Expansion Drive/Projekte/acodersplace/index.php",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/free-key-wlan-ausstattug-deutschland.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/android-mobile-browser-benchmark-vergleich.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/vodafone-kauf-kabelnetzbetreiber-ono.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/vodafone-kauf-spanischer-kabelnetzbetreiber.html",
+		"/home/cyrix/workspace/Aiko/javascript/ui.js",
+		"/home/cyrix/workspace/Aiko/css/processing.css",
+		"/home/cyrix/workspace/Aiko/index.html",
+		"/home/cyrix/workspace/Aiko/css/processing-table.css",
+		"/home/cyrix/workspace/Aiko/processing.php",
+		"/home/cyrix/workspace/Aiko/css/index.css",
+		"/home/cyrix/workspace/Aiko/files/db.csv",
+		"/home/cyrix/workspace/Aiko/files/such-input.csv",
+		"/home/cyrix/workspace/DB/index.php",
+		"/home/cyrix/Projekt/Aiko/index.html",
+		"/home/cyrix/Projekt/Aiko/files/db.csv",
+		"/home/cyrix/Projekt/Aiko/files/such-input.csv",
+		"/home/cyrix/.cache/.fr-wLSKuL/jquery-ui-1.10.4.custom/index.html",
+		"/home/cyrix/workspace/Teltarif-Editor/tt-js/ui.js",
+		"/home/cyrix/workspace/Teltarif-Editor/tt-js/linkFormat.js",
+		"/home/cyrix/workspace/Teltarif-Editor/index.html",
+		"/home/cyrix/workspace/Teltarif-Editor/bugs.txt",
+		"/home/cyrix/workspace/Teltarif-Editor/tt-js/settings.js",
+		"/home/cyrix/workspace/Teltarif-Editor/tt-js/message.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/ui.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/linkFormat.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-css/editor.css",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/index.html",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/jquery/jquery-atd-plugin/demo2.html",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/jquery/jquery-atd-plugin/demo.html",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/catdb.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/dialog.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/catdbS.js",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/qualcomm-snapdragon-610-614-intel-merrifield-z3480.html",
+		"/home/cyrix/vcard.vcf",
+		"/home/cyrix/Projekt/ttPlugin/transformCatDb/transformer.js",
+		"/home/cyrix/Projekt/ttPlugin/transformCatDb/catdb.js",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/iridium-go-hotspot.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/dab070214.html",
+		"/home/cyrix/Projekt/ttPlugin/transformer.js",
+		"/home/cyrix/Projekt/ttPlugin/index.html",
+		"/home/cyrix/Projekt/ttPlugin/catdb.js",
+		"/home/cyrix/Projekt/ttPlugin/index.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-data/transformer.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-data/catdb.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/KaJsChanges.txt",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-data/data.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/tt-linkFormat/linkFormat.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/head.load.min.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/bugs.txt",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/tabs.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/settings.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/message.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-js/autoshy.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/tt-data/teaser.js",
+		"/home/cyrix/Projekt/ttPlugin/Teltarif-Editor/regen-catdb.html",
+		"/home/cyrix/Projekt/ttPlugin/linkAndFormat.js",
+		"/home/cyrix/Studium/Semester3/Info/23.01.14/pokedex/app/views/pokedex_lists/_form.html.erb",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/facebook-geburtstag-10-jahre.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/fotografie-museum-kunstwerk-soziale-medien-recht.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/bgh-sendemasten-wertminderung-urteil.html",
+		"/home/cyrix/Studium/Semester3/Info/23.01.14/pokedex/spec/text_spec.rb",
+		"/home/cyrix/Studium/Semester3/Info/23.01.14/pokedex/app/views/pokedex_lists/sort.html.erb",
+		"/home/cyrix/Studium/Semester3/Info/23.01.14/pokedex/app/controllers/pokedex_lists_controller.rb",
+		"/home/cyrix/Studium/Semester3/Info/23.01.14/pokedex/app/views/pokedex_lists/index.html.erb",
+		"/home/cyrix/Studium/Semester3/Info/23.01.14/pokedex/app/models/pokedex_list.rb",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/nokia-normandy-windows-phone-ui.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/google-hintergrund.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/handys-im-winter-empfehlungen-tipps.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/tcp-port-32764-firmware-updates-ersthilfe.html",
+		"/run/user/1000/gvfs/sftp:host=localhost,port=2222/home/mossdorf/news/tcp-port-32764-firmware-updates-ersthilfe.html.bak",
+		"/home/cyrix/workspace/FreeVlcRemote/www/index.html",
+		"/home/cyrix/workspace/FreeVlcRemote/www/css/index.css",
+		"/home/cyrix/workspace/FreeVlcRemote/www/js/updater.js",
+		"/home/cyrix/workspace/FreeVlcRemote/www/js/player.js",
+		"/usr/share/vlc/lua/http/js/controlers.js",
+		"/home/cyrix/workspace/FreeVlcRemote/www/js/setupUi.js",
+		"/home/cyrix/workspace/FreeVlcRemote/www/js/index.js",
+		"/home/cyrix/workspace/DB/test.php",
+		"/home/cyrix/workspace/DB/index.js",
+		"/home/cyrix/workspace/DB/connect.php",
+		"/home/cyrix/workspace/DB/insertPHP/kundeAnlegen.php",
+		"/home/cyrix/workspace/DB/index.css",
+		"/home/cyrix/workspace/DB/insertPHP/kundenAnlegen.php",
+		"/home/cyrix/workspace/DB/index.html"
+	],
+	"find":
+	{
+		"height": 35.0
+	},
+	"find_in_files":
+	{
+		"height": 0.0,
+		"where_history":
+		[
+		]
+	},
+	"find_state":
+	{
+		"case_sensitive": true,
+		"find_history":
+		[
+			"space",
+			"\"",
+			"	",
+			"10",
+			"	",
+			"addAudioButton",
+			"	",
+			"\"",
+			"	",
+			"\"",
+			"	",
+			"\"",
+			"{",
+			"	",
+			"\"",
+			"	",
+			"Ã„",
+			"ÃŸ",
+			"Ã–",
+			"Ã¼",
+			"Ã¤",
+			"Ã¶",
+			"[]",
+			"bestOfThree",
+			"bestMatches",
+			"dbArray",
+			"getKey",
+			"tt-input-text",
+			"tt",
+			"tt-input-text",
+			"Ã„",
+			"Ãœ",
+			"Ã¶",
+			"ZTÜ",
+			"ZTU",
+			"ZT",
+			"Ã¼",
+			"Ã¤",
+			"ÃŸ",
+			"'",
+			"RIM#Por",
+			"web",
+			"ffent",
+			"Ã©",
+			"Ã©#",
+			"Ã¼",
+			"Ãœ",
+			"ÃŸ",
+			"Ã¶",
+			"'",
+			"secondLastword",
+			"ttCatData",
+			"autocomplete",
+			"blaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa",
+			"replacement",
+			"catoutput",
+			"textoutput",
+			"textinput",
+			"output",
+			"input",
+			"element",
+			"ende des ja",
+			"Werbung und Schutz der Nutzer",
+			"Morgen wird es 10&nbsp;Jahre alt.",
+			"anderes Angebot",
+			"nsbp",
+			"“",
+			"„",
+			"–",
+			"Wiederspruchs",
+			"Paragraph",
+			"ÃŸ",
+			"Ã¶",
+			"Ã¤",
+			"Ã¼",
+			"Woh&nbsp;nungs&nbsp;eigen&nbsp;tümern",
+			"Wohnungseigentümergemeinschaft",
+			"Wohnungseigentümern",
+			"vermeindlichen",
+			"Google X",
+			"Ãœ",
+			"ÃŸ",
+			"Ã¶",
+			"Ã¼",
+			"Ã¤",
+			"a>"
+		],
+		"highlight": true,
+		"in_selection": false,
+		"preserve_case": false,
+		"regex": false,
+		"replace_history":
+		[
+			"'",
+			"    ",
+			"activateMicrophoneButton",
+			"    ",
+			"'",
+			"    ",
+			"'",
+			"    ",
+			"'",
+			"' ",
+			" { ",
+			"    ",
+			"'",
+			"    ",
+			"Ä",
+			"ß",
+			"Ö",
+			"ü",
+			"ä",
+			"ö",
+			"array()",
+			"bestMatches",
+			"Ä",
+			"Ü",
+			"ö",
+			"ü",
+			"ä",
+			"ß",
+			"\"",
+			"é",
+			"ü",
+			"Ü",
+			"ü",
+			"ß",
+			"ö",
+			"ü",
+			"\"",
+			"link",
+			"catOutput",
+			"textOutput",
+			"textInput",
+			"textoutput",
+			"textinput",
+			"input",
+			"Werbung und dem Schutz der Nutzer",
+			"Morgen wird das soziale Netzwerk 10&nbsp;Jahre alt.",
+			"anderer Dienst",
+			"nbsp",
+			"\"",
+			"-",
+			"Paragraf",
+			"ß",
+			"ö",
+			"ä",
+			"ü",
+			"Woh&shynungs&shy;eigen&shy;tümern",
+			"Woh&shy;nungs&shy;eigen&shy;tümer&shy;gemein&shy;schaft",
+			"Woh&nbsp;nungs&nbsp;eigen&nbsp;tümern",
+			"vermeintlichen",
+			"Google&nbsp;X",
+			"Ü",
+			"ß",
+			"ö",
+			"ü",
+			"ä"
+		],
+		"reverse": false,
+		"show_context": true,
+		"use_buffer2": true,
+		"whole_word": false,
+		"wrap": true
+	},
+	"groups":
+	[
+		{
+			"selected": 1,
+			"sheets":
+			[
+				{
+					"buffer": 0,
+					"file": "js/chat.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 268,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								266,
+								266
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 4,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "js/helper.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1142,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								665,
+								665
+							]
+						],
+						"settings":
+						{
+							"codeintel": true,
+							"codeintel_config":
+							{
+								"JavaScript":
+								{
+									"codeintel_max_recursive_dir_depth": 2,
+									"codeintel_scan_files_in_project": false,
+									"javascriptExtraPaths":
+									[
+									]
+								},
+								"PHP":
+								{
+									"codeintel_max_recursive_dir_depth": 5,
+									"codeintel_scan_files_in_project": false,
+									"phpExtraPaths":
+									[
+									]
+								},
+								"Python":
+								{
+									"env":
+									{
+									}
+								}
+							},
+							"codeintel_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_live": true,
+							"codeintel_live_enabled_languages":
+							[
+								"JavaScript",
+								"Mason",
+								"XBL",
+								"XUL",
+								"RHTML",
+								"SCSS",
+								"Python",
+								"HTML",
+								"Ruby",
+								"Python3",
+								"XML",
+								"Sass",
+								"XSLT",
+								"Django",
+								"HTML5",
+								"Perl",
+								"CSS",
+								"Twig",
+								"Less",
+								"Smarty",
+								"Node.js",
+								"Tcl",
+								"TemplateToolkit",
+								"PHP"
+							],
+							"codeintel_max_recursive_dir_depth": 10,
+							"codeintel_scan_exclude_dir":
+							{
+								"JavaScript":
+								[
+									"/build/",
+									"/min/"
+								]
+							},
+							"codeintel_scan_files_in_project": true,
+							"codeintel_selected_catalogs":
+							[
+								"PyWin32",
+								"jQuery",
+								"Rails"
+							],
+							"codeintel_snippets": true,
+							"codeintel_syntax_map":
+							{
+								"Python Django": "Python"
+							},
+							"codeintel_tooltips": "popup",
+							"sublime_auto_complete": true,
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 2,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "/home/cyrix/.config/sublime-text-3/Packages/User/Default (Linux).sublime-keymap",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 0,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 3,
+					"file": "js/roles/caller.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 2030,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								0,
+								0
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JavaScript.tmLanguage",
+							"tab_size": 4,
+							"translate_tabs_to_spaces": true
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 3,
+					"type": "text"
+				},
+				{
+					"buffer": 4,
+					"file": "webRTC.sublime-project",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 176,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								162,
+								162
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/JavaScript/JSON.tmLanguage"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
+			]
+		}
+	],
+	"incremental_find":
+	{
+		"height": 35.0
+	},
+	"input":
+	{
+		"height": 34.0
+	},
+	"layout":
+	{
+		"cells":
+		[
+			[
+				0,
+				0,
+				1,
+				1
+			]
+		],
+		"cols":
+		[
+			0.0,
+			1.0
+		],
+		"rows":
+		[
+			0.0,
+			1.0
+		]
+	},
+	"menu_visible": true,
+	"output.csslint_result_view":
+	{
+		"height": 124.0
+	},
+	"output.find_results":
+	{
+		"height": 0.0
+	},
+	"project": "webRTC.sublime-project",
+	"replace":
+	{
+		"height": 50.0
+	},
+	"save_all_on_build": true,
+	"select_file":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_project":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"select_symbol":
+	{
+		"height": 0.0,
+		"selected_items":
+		[
+		],
+		"width": 0.0
+	},
+	"settings":
+	{
+	},
+	"show_minimap": true,
+	"show_open_files": false,
+	"show_tabs": true,
+	"side_bar_visible": true,
+	"side_bar_width": 156.0,
+	"status_bar_visible": true,
+	"template_settings":
+	{
+	}
+}
