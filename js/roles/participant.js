@@ -127,7 +127,7 @@ Participant.prototype.startCall = function() {
 };
 
 Participant.prototype.endCall = function() {
-    if(this.call) {
+    if (this.call) {
         this.call.close();
     }
     if (this.localStream) {

@@ -14,7 +14,7 @@ body a:visited{
 }
 
 h1{
-    font-size: 4em;
+    font-size: 3em;
 }
 
 #overlay{
@@ -152,15 +152,14 @@ height                     : 70%;
 background-color           : black;
 height                     : 73%;
 border-bottom              : 0.2em ridge darkgrey;
-overflow-y                 : scroll;
 word-break                 : break-all;
 padding                    : 2%;
 padding-bottom             : 10%;
+
 }
 
 #chat #messages .bubble{
 background                 : rgba(255,255,255,0.3);
-height                     : 5%;
 padding                    : 2%;
 border                     : 1px rgba(255,255,255,0.5) solid;
 border-radius              : 10px;
