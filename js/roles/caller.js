@@ -7,8 +7,8 @@ function Caller() {
 
     caller.peer.on('open', function(id) {
         console.log('here');
-        var link = addUrlParam(document.location.search, 'id', id);
-        $('#header').html('Send this link to your friends<br/><a href="' + link + '" target="_blank">'+link+'</a>');
+        var link = document.URL + addUrlParam(document.location.search, 'id', id);
+        $('#header').html('<h1>Send this link to your friends<br/><a href="' + link + '" target="_blank">'+link+'</a></h1>');
         caller.userId = id;
     });
 

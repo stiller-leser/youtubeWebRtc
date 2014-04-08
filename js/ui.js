@@ -55,49 +55,47 @@ if (util.supports.audioVideo) {
         e.preventDefault();
         role.unmuteMicrophone();
         $('#activateMicrophoneButton').hide();
-        $("#deactivateMicrophoneButton").show();
+        $('#deactivateMicrophoneButton').show();
     });
 
     $('#deactivateMicrophoneButton').bind('click', function(e) {
         e.preventDefault();
         role.muteMicrophone();
         $('#deactivateMicrophoneButton').hide();
-        $("#activateMicrophoneButton").show();
+        $('#activateMicrophoneButton').show();
     });
 
     $('#muteCallerButton').bind('click', function(e) {
         e.preventDefault();
         role.muteCaller();
         $('#muteCallerButton').hide();
-        $("#unmuteCallerButton").show();
+        $('#unmuteCallerButton').show();
     });
 
     $('#unmuteCallerButton').bind('click', function(e) {
         e.preventDefault();
         role.unmuteCaller();
         $('#unmuteCallerButton').hide();
-        $("#muteCallerButton").show();
+        $('#muteCallerButton').show();
     });
 
     $('#partner').bind('click', function(e) {
         e.preventDefault();
         var elem = document.getElementById('partner');
 
-        if ((document.fullScreenElement && document.fullScreenElement !== null) || (!document.mozFullScreen && !document.webkitIsFullScreen)) {
-            if (elem.requestFullscreen) {
-              elem.requestFullscreen();
-            } else if (elem.msRequestFullscreen) {
-              elem.msRequestFullscreen();
-            } else if (elem.mozRequestFullScreen) {
-              elem.mozRequestFullScreen();
-            } else if (elem.webkitRequestFullscreen) {
-              elem.webkitRequestFullscreen();
-            }
+        if (elem.requestFullscreen) {
+            elem.requestFullscreen();
+        } else if (elem.msRequestFullscreen) {
+            elem.msRequestFullscreen();
+        } else if (elem.mozRequestFullScreen) {
+            elem.mozRequestFullScreen();
+        } else if (elem.webkitRequestFullscreen) {
+            elem.webkitRequestFullscreen();
         }
     });
-    
+
 } else {
-    $('#callButton').attr('diabled' , 'disabled');
+    $('#callButton').attr('disabled' , 'disabled');
 }
 
 var resizePlayer = function() {
