@@ -41,20 +41,13 @@ function Caller() {
     });
 
     caller.peer.on('call', function(call) {
-         showCallSettingsButtons();
-
         console.log('caller is answering call');
+        showCallSettingsButtons();
+        caller.call = call;
         var localStream = caller.getMediaStream();
-
+        console.log(localStream);
         call.answer(localStream);
-        call.on('stream', function(remoteStream) {
-            console.log('caller is receiving stream');
-            console.log('callers remote stream');
-            console.log(remoteStream);
-            caller.localStream = localStream;
-            caller.remoteStream = remoteStream;
-            caller.showVideo();
-        });
+        caller.handleCall(call);
     });
 }
 

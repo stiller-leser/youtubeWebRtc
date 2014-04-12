@@ -31,21 +31,13 @@ function Callee() {
     });
 
     callee.peer.on('call', function(call) {
-        callee.call = call;
         console.log('callee is answering call');
-         showCallSettingsButtons();
-
+        showCallSettingsButtons();
+        callee.call = call;
         var localStream = callee.getMediaStream();
-
+        console.log(localStream);
         call.answer(localStream);
-        call.on('stream', function(remoteStream) {
-            console.log('callee is receiving stream');
-            console.log('callees remote stream');
-            console.log(remoteStream);
-            callee.localStream = localStream;
-            callee.remoteStream = remoteStream;
-            callee.showVideo();
-        });
+        callee.handleCall(call);        
     });
 }
 

@@ -14,7 +14,7 @@ body a:visited{
 }
 
 h1{
-    font-size: 3em;
+    font-size: 2em;
 }
 
 #overlay{
@@ -83,7 +83,7 @@ display                    : none;
 #right{
 display                    : inline-block;
 height                     : 100%;
-width                      : 29.7%;
+width                      : 29%;
 border-left                : 0.2em darkgrey ridge;
 }
 

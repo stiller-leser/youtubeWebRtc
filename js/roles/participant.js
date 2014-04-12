@@ -98,7 +98,7 @@ Participant.prototype.getMediaStream = function() {
         video: true
     },function(stream) {
         if (navigator.mozGetUserMedia) {
-            localStream = stream;
+            localStream = URL.createObjectURL(stream);
         }else {
             var vendorURL = window.URL || window.webkitURL;
             localStream = vendorURL.createObjectURL(stream);
@@ -119,12 +119,27 @@ Participant.prototype.startCall = function() {
     },function(stream) {
         console.log('called');
         stream.getAudioTracks()[0].enabled = false;
+        var call = participant.peer.call(target, stream);
+        participant.call = call;
         participant.localStream = stream;
-        participant.call = participant.peer.call(target, stream);
+        participant.handleCall();
     },function(error) {
         console.log(error);
     });
 };
+
+Participant.prototype.handleCall = function(call) {
+    console.log(this.call);
+    showCallSettingsButtons();
+    console.log(call);
+    call.on('stream', function(stream) {
+        var v = document.getElementById('partner');
+        console.log(v);
+        console.log(stream);
+        v.src = URL.createObjectURL(stream);
+        v.play();
+    });
+}
 
 Participant.prototype.endCall = function() {
     if (this.call) {
@@ -134,14 +149,6 @@ Participant.prototype.endCall = function() {
         this.localStream.stop();
     }
     this.sendCallClosed(true);
-};
-
-Participant.prototype.showVideo = function() {
-    var v = document.getElementById('partner');
-    console.log(v);
-    //this.remoteStream.getAudioTracks()[0].enabled = false;
-    v.src = URL.createObjectURL(this.remoteStream);
-    v.play();
 };
 
 Participant.prototype.unmuteMicrophone = function() {

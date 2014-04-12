@@ -40,7 +40,6 @@ $('#send').bind('click', function(e) {
 
 if (util.supports.audioVideo) {
     $('#callButton').bind('click', function(e) {
-        showCallSettingsButtons();
         e.preventDefault();
         role.startCall();
     });
