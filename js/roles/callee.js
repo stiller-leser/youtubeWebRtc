@@ -34,10 +34,18 @@ function Callee() {
         console.log('callee is answering call');
         showCallSettingsButtons();
         callee.call = call;
-        var localStream = callee.getMediaStream();
-        console.log(localStream);
-        call.answer(localStream);
-        callee.handleCall(call);        
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+        navigator.getUserMedia({
+            audio: true,
+            video: true
+        },function(stream) {
+            stream.getAudioTracks()[0].enabled = false;
+            call.answer(stream);
+            callee.handleCall();  
+            console.log('called'); 
+        },function(error) {
+            console.log(error);
+        });
     });
 }
 

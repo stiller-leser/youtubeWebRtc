@@ -41,13 +41,21 @@ function Caller() {
     });
 
     caller.peer.on('call', function(call) {
-        console.log('caller is answering call');
         showCallSettingsButtons();
+        console.log("Caller is answering the call");
         caller.call = call;
-        var localStream = caller.getMediaStream();
-        console.log(localStream);
-        call.answer(localStream);
-        caller.handleCall(call);
+        navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
+        navigator.getUserMedia({
+            audio: true,
+            video: true
+        },function(stream) {
+            stream.getAudioTracks()[0].enabled = false;
+            call.answer(stream);
+            caller.handleCall();  
+            console.log('called'); 
+        },function(error) {
+            console.log(error);
+        });
     });
 }
 

@@ -89,6 +89,7 @@ Participant.prototype.handleMessage = function(data) {
 };
 
 Participant.prototype.getMediaStream = function() {
+
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
 
     var localStream = null;
@@ -99,6 +100,7 @@ Participant.prototype.getMediaStream = function() {
     },function(stream) {
         if (navigator.mozGetUserMedia) {
             localStream = URL.createObjectURL(stream);
+            console.log(localStream);
         }else {
             var vendorURL = window.URL || window.webkitURL;
             localStream = vendorURL.createObjectURL(stream);
@@ -112,27 +114,26 @@ Participant.prototype.getMediaStream = function() {
 Participant.prototype.startCall = function() {
     var participant = this;
     var target = participant.callees[0];
+
     navigator.getUserMedia = navigator.getUserMedia || navigator.webkitGetUserMedia || navigator.mozGetUserMedia;
     navigator.getUserMedia({
         audio: true,
         video: true
     },function(stream) {
-        console.log('called');
-        stream.getAudioTracks()[0].enabled = false;
-        var call = participant.peer.call(target, stream);
-        participant.call = call;
+       stream.getAudioTracks()[0].enabled = false;
+        participant.call = participant.peer.call(target, stream);
         participant.localStream = stream;
         participant.handleCall();
+        console.log('called'); 
     },function(error) {
         console.log(error);
     });
 };
 
-Participant.prototype.handleCall = function(call) {
-    console.log(this.call);
+Participant.prototype.handleCall = function() {
     showCallSettingsButtons();
-    console.log(call);
-    call.on('stream', function(stream) {
+    var participant = this;
+    participant.call.on('stream', function(stream) {
         var v = document.getElementById('partner');
         console.log(v);
         console.log(stream);
